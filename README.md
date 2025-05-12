@@ -51,6 +51,8 @@ Open a terminal and run
 ```
   ./icsim vcan0
 ```
+This launches the graphical instrument cluster interface, simulating a vehicle dashboard connected to a virtual CAN network (vcan0).
+
 
 Then startup the controls
 
