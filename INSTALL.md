@@ -8,8 +8,8 @@ First, make sure your system is up-to-date and install required packages.
 
 ```sudo apt-get install can-utils libsdl2-dev libsdl2-image-dev```
 
-can-utils: Tools for working with the CAN bus.
- libsdl2-dev, libsdl2-image-dev: Libraries required for compiling ICSim graphical interface
+```can-utils```: Tools for working with the CAN bus.
+ ```libsdl2-dev, libsdl2-image-dev```: Libraries required for compiling ICSim graphical interface
 
 Clone the ICSim Repository:
 
@@ -28,8 +28,8 @@ If you see a build error:
 
 ```sudo apt-get upgrade```
 
-    Then try again
-
+    
+Then try again
 
 ```make all```
 
