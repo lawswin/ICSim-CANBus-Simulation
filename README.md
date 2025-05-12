@@ -124,7 +124,7 @@ For the most realistic training you can change the difficulty levels.  Set the d
   ./controls -s 1401717026 -l 2 vcan0
 ```
 
-This will add additional randomization to the target packets, simulating other data stored in the same arbitration id.
+This increases the challenge of identifying and isolating relevant CAN signals.
 
 
 
