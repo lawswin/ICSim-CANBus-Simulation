@@ -66,6 +66,7 @@ In a second terminal, execute
 This opens the control panel for sending input (like turn signals or speed changes) over the CAN bus
 
 
+
 Important Notes
 
 The IC simulator (icsim) and the controls interface (controls) are synchronized by default.
@@ -124,3 +125,21 @@ For the most realistic training you can change the difficulty levels.  Set the d
 ```
 
 This will add additional randomization to the target packets, simulating other data stored in the same arbitration id.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
