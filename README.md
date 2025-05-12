@@ -1,9 +1,6 @@
 # ICSim-CANBus-Simulation
 CAN Bus simulation using ICSim for educational and cybersecurity research
-Instrument Cluster Simulator for SocketCAN
 ------------------------------------------
-
-By: OpenGarages <agent.craig@gmail.com>
 
 Compiling
 ---------
@@ -18,11 +15,6 @@ You can get can-utils from github or on Ubuntu you may run the following
   sudo apt-get install libsdl2-dev libsdl2-image-dev can-utils  
 ```
 
-With dependencies installed, you may use the [Meson build system](https://mesonbuild.com/) to build the project:
-
-```
-  meson setup builddir && cd builddir
-  meson compile
 ```
 
 Testing on a virtual CAN interface
