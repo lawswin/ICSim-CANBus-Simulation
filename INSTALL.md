@@ -42,9 +42,9 @@ If you don’t have a physical CAN interface, create a virtual one
 
 
 ` sudo modprobe can`
-   sudo modprobe vcan
-   sudo ip link add dev vcan0 type vcan
-   sudo ip link set up vcan0`
+   `sudo modprobe vcan`
+   `sudo ip link add dev vcan0 type vcan`
+   `sudo ip link set up vcan0`
 
 Then verify it
 
