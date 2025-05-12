@@ -55,7 +55,7 @@ This launches the graphical instrument cluster interface, simulating a vehicle d
 
 
 
-Launch the Controls Interface
+Launch the Controls Interface:
 
 
 In a second terminal, execute
@@ -67,7 +67,7 @@ This opens the control panel for sending input (like turn signals or speed chang
 
 
 
-Important Notes
+Important Notes:
 
 The IC simulator (icsim) and the controls interface (controls) are synchronized by default.
 
