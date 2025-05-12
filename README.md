@@ -46,6 +46,7 @@ Usage
 Default operations:
 
 Follow these steps to run the ICSim CAN bus simulation with default settings
+
 Open a terminal and run
 ```
   ./icsim vcan0
