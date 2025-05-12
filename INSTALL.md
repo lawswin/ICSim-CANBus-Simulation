@@ -1,63 +1,103 @@
-We can install icsim and can-utils using the following commands;
+ICSim + CAN-utils Installation
 
-```git clone https://github.com/zombieCraig/ICSim.git```
+Install Required Dependencies:
 
-sudo apt-get install can-utils
+First, make sure your system is up-to-date and install required packages.
 
-sudo apt-get install libsdl2-dev libsdl2-image-dev
+```sudo apt-get update```
 
-sudo apt-get update — fix-missing
+```sudo apt-get install can-utils libsdl2-dev libsdl2-image-dev```
 
-If you can’t or won’t purchase hardware devices, you can always set up a virtual CAN network. To set up a virtual CAN network;
+can-utils: Tools for working with the CAN bus.
+ libsdl2-dev, libsdl2-image-dev: Libraries required for compiling ICSim graphical interface
 
-sudo modprobe can
+Clone the ICSim Repository:
 
-sudo modprobe vcan
+ ```gitclone https://github.com/lawswin/ICSim-CANBus-Simulation```
 
-sudo ip link add dev vcan0 type vcan
+```cd ICSim```
 
-sudo ip link set up vcan0
+This will download the official ICSim simulator source code and move you into the project directory.
 
-Ip a // We can now see vcan0 in the output
+Build the ICSim Application:
+ Run the following:
 
-cd ICSim
+```make all```
 
-make all
+If you see a build error:
 
-If an error is received in the “make all” command;
+```sudo apt-get upgrade```
 
-sudo apt-get upgrade
+    Then try again
 
-If the same error persists;
 
-sudo apt-get install libsdl2-dev libsdl2-image-dev
+```make all```
 
-if this is the error -> (/usr/bin/ld: lib.o: error adding symbols: file in wrong format)
+Set Up a Virtual CAN Interface (No Hardware Needed)
 
-git clone https://github.com/libsdl-org/SDL
+If you don’t have a physical CAN interface, create a virtual one
 
+
+` sudo modprobe can
+   sudo modprobe vcan
+   sudo ip link add dev vcan0 type vcan
+   sudo ip link set up vcan0`
+
+Then verify it
+
+
+```ip a | grep vcan0```
+You should see something like vcan0: <NOARP,UP,...> — this means your virtual CAN is ready.
+
+ Run the Simulator and Controls:
+ 
+Now that everything is set up, split your terminal into 3 sections. Run each of the following in a different terminal tab or pane.
+
+Terminal 1 — Launch the ICSim Dashboard:
+
+```./icsim vcan0```
+
+Terminal 2 — Launch the Control Panel:
+
+```./controls vcan0```
+
+Terminal 3 — (Optional) Monitor CAN traffic:
+
+```cansniffer vcan0```
+
+ 
+ If You Encounter This Specific Error
+
+
+```/usr/bin/ld: lib.o: error adding symbols: file in wrong format```
+
+This likely means you’re mixing 32-bit and 64-bit object files. Here’s how to rebuild SDL manually:
+
+
+# Go one level above ICSim if needed
+cd ..
+
+# Clone SDL manually
+git clone https://github.com/libsdl-org/SDL.git
 cd SDL
-
 mkdir build
-
 cd build
 
+# Build SDL
 cmake .. -DCMAKE_BUILD_TYPE=Release
+cmake --build . --config Release --parallel
+Now compile ICSim using the local SDL build:
 
-cmake — build . — config Release — parallel
 
-cd ICSim
+cd ../../ICSim
+gcc -c -o lib.o lib.c -I../SDL/include
+```make``
 
-gcc -c -o lib.o lib.c -I/home/naoumine/SDL/include
+ You’re Done!
+You now have:
 
-make
+A running ICSim dashboard and control panel
 
-We have finished the installation phase!
+Virtual CAN traffic flowing
 
-I suggest you to divide the terminal into 3 parts for ease of use.
-
-Let’s run the following commands separately in the relevant terminals.
-
-./icsim vcan0
-
-./controls vcan0
+Optional sniffer monitoring traffic
