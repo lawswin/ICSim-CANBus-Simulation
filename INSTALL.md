@@ -1,6 +1,6 @@
 We can install icsim and can-utils using the following commands;
 
-'git clone https://github.com/zombieCraig/ICSim.git'
+'''git clone https://github.com/zombieCraig/ICSim.git'''
 
 sudo apt-get install can-utils
 
