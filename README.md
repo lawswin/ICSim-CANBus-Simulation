@@ -54,16 +54,23 @@ Open a terminal and run
 This launches the graphical instrument cluster interface, simulating a vehicle dashboard connected to a virtual CAN network (vcan0).
 
 
-Then startup the controls
 
+Launch the Controls Interface
+
+In a second terminal, execute
 ```
   ./controls vcan0
 ```
+This opens the control panel for sending input (like turn signals or speed changes) over the CAN bus
 
-The hard coded defaults should be in sync and the controls should control the IC.  Ideally use a controller similar to
-an XBox controller to interact with the controls interface.  The controls app will generate corrosponding CAN packets
-based on the buttons you press.  The IC Sim sniffs the CAN and looks for relevant CAN packets that would change the
-display.
+Important Notes
+The IC simulator (icsim) and the controls interface (controls) are synchronized by default.
+
+Pressing buttons in the control panel generates CAN packets.
+
+The IC simulator monitors these packets and updates the dashboard display accordingly.
+
+It is recommended to use a game controller (such as an Xbox controller) for smooth interaction, though keyboard input also works.
 
 Troubleshooting
 ---------------
