@@ -11,6 +11,8 @@ First, make sure your system is up-to-date and install required packages.
 ```can-utils```: Tools for working with the CAN bus.
  ```libsdl2-dev, libsdl2-image-dev```: Libraries required for compiling ICSim graphical interface
 
+
+
 Clone the ICSim Repository:
 
  ```gitclone https://github.com/lawswin/ICSim-CANBus-Simulation```
@@ -20,6 +22,7 @@ Clone the ICSim Repository:
 This will download the official ICSim simulator source code and move you into the project directory.
 
 Build the ICSim Application:
+ 
  Run the following:
 
 ```make all```
@@ -38,7 +41,7 @@ Set Up a Virtual CAN Interface (No Hardware Needed)
 If you don’t have a physical CAN interface, create a virtual one
 
 
-` sudo modprobe can
+` sudo modprobe can`
    sudo modprobe vcan
    sudo ip link add dev vcan0 type vcan
    sudo ip link set up vcan0`
