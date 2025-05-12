@@ -69,7 +69,7 @@ Terminal 3 — (Optional) Monitor CAN traffic:
 ```cansniffer vcan0```
 
  
- If You Encounter This Specific Error
+ If You Encounter This Specific Error:
 
 
 ```/usr/bin/ld: lib.o: error adding symbols: file in wrong format```
