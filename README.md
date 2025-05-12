@@ -38,7 +38,7 @@ You can run the following commands to setup a virtual can interface
   sudo ip link set up vcan0
 ```
 
-If you type ifconfig vcan0 you should see a vcan0 interface. A setup_vcan.sh file has also been provided with this
+If you type ip a you should see a vcan0 interface. A setup_vcan.sh file has also been provided with this
 repo.
 
 Usage
