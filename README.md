@@ -2,7 +2,7 @@
 CAN Bus simulation using ICSim for educational and cybersecurity research
 ------------------------------------------
 
-Instrument Cluster Simulator for Socket
+
 ------------------------------------------
 
 
@@ -22,7 +22,7 @@ You can get can-utils from github or on Ubuntu you may run the following
 
 
 
-
+```
   
   
 ```
@@ -46,7 +46,6 @@ Usage
 Default operations:
 
 Follow these steps to run the ICSim CAN bus simulation with default settings
-
 Open a terminal and run
 ```
   ./icsim vcan0
