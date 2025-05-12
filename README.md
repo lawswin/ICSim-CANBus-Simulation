@@ -57,13 +57,16 @@ This launches the graphical instrument cluster interface, simulating a vehicle d
 
 Launch the Controls Interface
 
+
 In a second terminal, execute
 ```
   ./controls vcan0
 ```
 This opens the control panel for sending input (like turn signals or speed changes) over the CAN bus
 
+
 Important Notes
+
 The IC simulator (icsim) and the controls interface (controls) are synchronized by default.
 
 Pressing buttons in the control panel generates CAN packets.
